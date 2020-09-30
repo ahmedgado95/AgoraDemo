@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,76 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AgoraDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Call Ended" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="duG-Qn-B5I">
+                                <rect key="frame" x="166" y="437.5" width="82" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qx5-tQ-a7L">
+                                <rect key="frame" x="191" y="430.5" width="32" height="35"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <state key="normal" title="Call"/>
+                                <connections>
+                                    <action selector="callButtonPresses:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WgS-Gg-TRN"/>
+                                </connections>
+                            </button>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dFF-4C-cHt">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wF7-0O-Uzh">
+                                <rect key="frame" x="204" y="54" width="200" height="250"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="eiw-Xq-Hbg"/>
+                                    <constraint firstAttribute="width" constant="200" id="ihF-RM-sS0"/>
+                                </constraints>
+                            </view>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZUU-sQ-Hn7">
+                                <rect key="frame" x="182" y="817" width="50" height="35"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <state key="normal" title="Leave">
+                                    <color key="titleColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="leaveButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ifb-tQ-fDP"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="dFF-4C-cHt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="1vb-OW-Hwb"/>
+                            <constraint firstItem="ZUU-sQ-Hn7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5IX-6u-TwD"/>
+                            <constraint firstItem="duG-Qn-B5I" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="9Mi-s7-6rb"/>
+                            <constraint firstItem="qx5-tQ-a7L" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Bi3-Mg-OK2"/>
+                            <constraint firstItem="wF7-0O-Uzh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="M0H-6v-Eeu"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="dFF-4C-cHt" secondAttribute="bottom" id="TXU-l6-rLf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wF7-0O-Uzh" secondAttribute="trailing" constant="10" id="YRc-I6-aNU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ZUU-sQ-Hn7" secondAttribute="bottom" constant="10" id="jef-ss-5FK"/>
+                            <constraint firstItem="duG-Qn-B5I" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="msk-du-9lR"/>
+                            <constraint firstItem="qx5-tQ-a7L" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rBC-pe-Mcv"/>
+                            <constraint firstItem="dFF-4C-cHt" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="tzj-e1-gg3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dFF-4C-cHt" secondAttribute="trailing" id="z3p-zd-qpi"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="callButton" destination="qx5-tQ-a7L" id="fYE-Tv-jjG"/>
+                        <outlet property="callEndLabel" destination="duG-Qn-B5I" id="lKU-jo-bq6"/>
+                        <outlet property="leaveButton" destination="ZUU-sQ-Hn7" id="mOo-fO-xIf"/>
+                        <outlet property="localVideo" destination="wF7-0O-Uzh" id="ukT-bw-cLR"/>
+                        <outlet property="remoteView" destination="dFF-4C-cHt" id="NCd-VL-2Vh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="139" y="119"/>
         </scene>
     </scenes>
 </document>
